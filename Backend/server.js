@@ -6,7 +6,16 @@ const connectDB = require("./config/db");
 const app = express();
 connectDB();
 
-app.use(cors());
+// app.use(cors());
+app.use(
+  cors({
+    origin: "https://bug-reporting-tracking.vercel.app", // frontend domain
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"], // <--- allow Content-Type
+  })
+);
+
+app.options("*", cors());
 app.use(express.json());
 
 // routes
