@@ -104,6 +104,4 @@ erDiagram
 
 ### Deployment
 
-Frontend: https://your-frontend-deployment-link.com
-
-Backend: https://your-backend-deployment-link.com
+Frontend: https://bug-reporting-tracking.vercel.app/
