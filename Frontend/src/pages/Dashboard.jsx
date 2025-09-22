@@ -116,14 +116,14 @@ function Dashboard({ user }) {
                     {b.title}
                   </h3>
                   {/* Status on mobile */}
-                  <span
+                  {/* <span
                     className={`block sm:hidden text-xs font-medium text-white px-2 py-1 rounded-full ml-auto
                   ${b.status === "Open" ? "bg-red-500" : ""}
                   ${b.status === "In Progress" ? "bg-orange-500" : ""}
                   ${b.status === "Closed" ? "bg-green-500" : ""}`}
                   >
                     {b.status}
-                  </span>
+                  </span> */}
                 </div>
                 <p className="text-sm text-slate-500">{b.description}</p>
                 <p className="text-xs text-slate-400">
@@ -135,24 +135,26 @@ function Dashboard({ user }) {
               {/* Actions */}
               <div className="flex flex-col items-start md:items-end gap-2">
                 {/* Status on tablet+ */}
-                <span
-                  className={`hidden sm:block text-xs font-medium text-white px-3 py-1 rounded-full
+                <div className="flex flex-row sm:flex-col gap-8 sm:gap-2">
+                  <span
+                    className={` sm:block text-xs font-medium text-white px-3 py-1 rounded-full text-center
                 ${b.status === "Open" ? "bg-red-500" : ""}
                 ${b.status === "In Progress" ? "bg-orange-500" : ""}
                 ${b.status === "Closed" ? "bg-green-500" : ""}`}
-                >
-                  {b.status}
-                </span>
+                  >
+                    {b.status}
+                  </span>
 
-                {/* Severity */}
-                <span
-                  className={`text-xs font-medium text-white px-3 py-1 rounded-full
+                  {/* Severity */}
+                  <span
+                    className={`text-xs font-medium text-white px-3 py-1 rounded-full text-center
                 ${b.severity === "Low" ? "bg-green-500" : ""}
                 ${b.severity === "Medium" ? "bg-yellow-500" : ""}
                 ${b.severity === "High" ? "bg-red-500" : ""}`}
-                >
-                  {b.severity}
-                </span>
+                  >
+                    {b.severity}
+                  </span>
+                </div>
 
                 {/* Action button */}
                 {b.status !== "Closed" && (
